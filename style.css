@@ -1,515 +1,314 @@
+/* General Styles */
 body {
-
-    font-family: "futura-lt-w01-book", Arial, sans-serif; /* Application de la police Futura */
-
-    margin: 0;
-
-    padding: 20px;
-
-    background-color: #f9f4e9; /* Fond général : Crème */
-
-    color: #5e0889; /* Texte principal : Violet foncé */
-
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f5f0; /* Light beige/cream */
+    color: #333;
 }
-
-
 
 .container {
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    background-color: #f9f4e9; /* Fond du conteneur : Crème */
-
-    padding: 20px;
-
-    border-radius: 8px;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-
 
 h1 {
-
-    text-align: center;
-
-    color: #5e0889; /* Titre principal : Violet foncé */
-
-    margin-bottom: 30px;
-
+    text-align: center;
+    color: #8c5252; /* Deep red/brown for titles */
+    margin-bottom: 30px;
 }
 
-
-
-.filters {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
-    justify-content: center;
-
-    margin-bottom: 30px;
-
-    padding: 15px;
-
-    background-color: #f9f4e9; /* Fond des filtres : Crème */
-
-    border-radius: 5px;
-
-    border: 1px solid #bea3e5; /* Bordure légère pour les filtres : Mauve clair */
-
+/* Filters Section */
+.filters-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f4e9e1; /* Lighter beige for filters background */
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
-
 
 .filter-group {
-
-    display: flex;
-
-    flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 10px;
 }
-
-
 
 .filter-group label {
-
-    margin-bottom: 5px;
-
-    font-weight: bold;
-
-    color: #5e0889; /* Texte des labels : Violet foncé */
-
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #6a4a4a; /* Slightly darker than title for labels */
 }
 
-
-
-.filters select,
-
-.filters input[type="date"] {
-
-    padding: 8px;
-
-    border: 1px solid #bea3e5; /* Bordure des champs de filtre : Mauve clair */
-
-    border-radius: 4px;
-
-    font-size: 16px;
-
-    min-width: 180px;
-
-    background-color: #fff; /* Fond des champs de filtre : Blanc */
-
-    color: #5e0889; /* Texte des champs de filtre : Violet foncé */
-
+.filter-group input[type="date"],
+.filter-group select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 180px; /* Fixed width for desktop */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-
-
-.events-list {
-
-    /* Changement clé ici : plus de grille, juste un conteneur flex */
-
-    display: flex;
-
-    flex-direction: column; /* Les éléments s'empilent verticalement */
-
-    gap: 10px; /* Réduction de l'espace entre les cartes */
-
+/* Event List */
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-
-
+/* Event Card */
 .event-card {
-
-    background-color: #ecdccc; /* Fond des cartes : Nouvelle couleur #ecdccc */
-
-    border: 1px solid #bea3e5; /* Bordure des cartes : Mauve clair */
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-
-    transition: transform 0.2s ease-in-out;
-
-    display: flex; /* Utilisation de flexbox pour l'agencement interne */
-
-    align-items: center; /* Alignement vertical */
-
-    padding: 15px; /* Espacement interne */
-
-    gap: 15px; /* Espace entre les éléments de la carte */
-
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffe; /* Very light yellow/cream for cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for absolute positioning of description */
 }
 
-
-
-.event-card:hover {
-
-    transform: translateY(-2px); /* Moins de déplacement vertical pour une liste */
-
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-
+.date-box {
+    width: 100px;
+    height: 100px;
+    background-color: #d17a3f; /* Orange/brown for date box */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-shrink: 0; /* Prevent shrinking on larger screens */
+    margin-right: 20px; /* Space between date box and event details */
 }
 
-
-
-.event-date-box {
-
-    flex-shrink: 0; /* Empêche la boîte de date de rétrécir */
-
-    width: 80px; /* Largeur fixe pour la boîte de date */
-
-    height: 80px; /* Hauteur fixe pour la boîte de date */
-
-    background-color: #be5219; /* Couleur du carré de date : Orange brûlé */
-
-    color: #f9f4e9; /* Texte blanc/crème pour la date */
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 6px;
-
-    font-weight: bold;
-
-    font-size: 1.2em; /* Taille de police pour la date */
-
-    text-align: center;
-
-    line-height: 1.2;
-
+.date-month {
+    font-size: 0.9em;
+    margin-bottom: 3px;
 }
 
-
-
-.event-date-box .month {
-
-    font-size: 0.8em; /* Taille de police pour le mois */
-
-    text-transform: uppercase;
-
+.date-day {
+    font-size: 2.2em;
 }
 
-.event-date-box .day {
-
-    font-size: 1.8em; /* Taille de police pour le jour */
-
+.event-details {
+    flex-grow: 1; /* Allow details to take available space */
+    margin-right: 20px; /* Space before buttons */
 }
 
-
-
-
-
-.event-main-info {
-
-    flex-grow: 1; /* Permet à cette section de prendre l'espace restant */
-
-    display: flex;
-
-    flex-direction: column;
-
+.event-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #8c5252; /* Deep red/brown */
+    font-size: 1.5em;
 }
 
-
-
-.event-main-info h2 {
-
-    margin: 0 0 5px 0; /* Réinitialise les marges du titre */
-
-    font-size: 1.3em; /* Taille du nom de l'événement */
-
-    color: #5e0889; /* Couleur du nom de l'événement */
-
-    line-height: 1.2;
-
+.event-details p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
 }
 
-
-
-.event-main-info p {
-
-    margin: 0 0 3px 0; /* Marges réduites pour les paragraphes */
-
-    font-size: 0.9em;
-
-    color: #5e0889;
-
+.event-details p.event-type {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 3px;
 }
 
-
-
-.event-main-info .type {
-
-    font-style: italic; /* Style pour le type */
-
-    color: #de7d37; /* Couleur différente pour le type */
-
-    font-size: 0.85em;
-
-    margin-bottom: 8px;
-
+.event-details p.event-location {
+    font-weight: normal;
+    color: #444;
 }
-
-
 
 .event-actions {
-
-    flex-shrink: 0; /* Empêche cette section de rétrécir */
-
-    display: flex;
-
-    flex-direction: column; /* Pour bouton et description toggle */
-
-    align-items: flex-end; /* Alignement à droite */
-
-    gap: 10px;
-
+    display: flex;
+    flex-direction: column; /* Default to column for buttons */
+    align-items: flex-end; /* Align buttons to the right */
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
-
-
-.event-link {
-
-    display: inline-block;
-
-    padding: 10px 18px;
-
-    background-color: #be5219; /* Boutons : Orange brûlé */
-
-    color: #f9f4e9; /* Texte des boutons : Crème */
-
-    text-decoration: none;
-
-    border-radius: 5px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-    white-space: nowrap; /* Empêche le texte du bouton de se casser */
-
-    transition: background-color 0.2s;
-
+.reserve-button {
+    background-color: #d17a3f; /* Orange/brown */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping inside button */
 }
 
-
-
-.event-link:hover {
-
-    background-color: #de7d37; /* Boutons au survol : Orange plus clair */
-
+.reserve-button:hover {
+    background-color: #b36435; /* Darker orange on hover */
 }
 
-
-
-/* Style pour le bouton "Plus d'infos" (description) */
-
-.toggle-description-btn {
-
-    background: none;
-
-    border: none;
-
-    color: #5e0889; /* Couleur du texte du bouton */
-
-    cursor: pointer;
-
-    font-size: 0.9em;
-
-    text-decoration: underline;
-
-    padding: 0;
-
-    transition: color 0.2s;
-
+.more-info-button {
+    background: none;
+    border: none;
+    color: #8c5252; /* Deep red/brown */
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-top: 10px; /* Space between reserve and more info */
+    padding: 0;
 }
-
-
-
-.toggle-description-btn:hover {
-
-    color: #be5219; /* Couleur au survol */
-
-}
-
-
 
 .event-description {
-
-    /* La description est maintenant gérée comme un élément "frère" de la carte */
-
-    background-color: #f0e6d6; /* Fond de la description */
-
-    padding: 15px;
-
-    margin-top: -5px; /* Remonte un peu pour coller à la carte */
-
-    margin-bottom: 15px; /* Marge en bas pour séparer de la prochaine carte */
-
-    border-radius: 0 0 8px 8px; /* Coins arrondis seulement en bas */
-
-    border: 1px solid #bea3e5;
-
-    border-top: none; /* Pas de bordure en haut car elle se connecte à la carte */
-
-    font-size: 0.9em;
-
-    color: #5e0889;
-
-    display: none; /* Cachée par défaut */
-
-    line-height: 1.5;
-
-    white-space: pre-wrap; /* Préserve les retours à la ligne du texte de la description */
-
-    width: calc(100% - 30px); /* Ajuste la largeur pour le padding */
-
-    margin-left: auto; /* Centre la description si le parent est plus large */
-
-    margin-right: auto;
-
+    background-color: #f0e6d8; /* Slightly darker background for description */
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #444;
+    line-height: 1.5;
+    display: none; /* Hidden by default, toggled by JavaScript */
+    width: 100%; /* Take full width of the card */
+    box-sizing: border-box; /* Include padding in width */
 }
 
-
-
-.event-description.show {
-
-    display: block; /* Affichée quand la classe 'show' est ajoutée par JS */
-
+.event-card.expanded .event-description {
+    display: block; /* Show when expanded */
 }
 
-
-
-.no-events-message {
-
-    text-align: center;
-
-    font-size: 1.2em;
-
-    color: #5e0889; /* Message d'absence d'événements : Violet foncé */
-
-    padding: 20px;
-
-    background-color: #bea3e5; /* Fond du message : Mauve clair */
-
-    border-radius: 5px;
-
-    margin-top: 20px;
-
-}
-
-
-
-/* Media Queries pour l'adaptabilité */
-
+/* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce overall padding */
+    }
 
-    .filters {
+    .container {
+        padding: 15px; /* Adjust container padding for mobile */
+        margin: 10px auto; /* Adjust margin */
+    }
 
-        flex-direction: column;
+    h1 {
+        font-size: 1.8em; /* Adjust title size */
+        margin-bottom: 20px;
+    }
 
-        align-items: center;
+    /* Filters Section - Mobile adjustments */
+    .filters-container {
+        flex-direction: column; /* Stack filters vertically on mobile */
+        align-items: stretch; /* Stretch items to fill container */
+        gap: 15px; /* Add space between stacked filters */
+        padding: 15px; /* Adjust padding for filters container */
+    }
 
-    }
+    .filter-group {
+        width: 100%; /* Make each filter group take full width */
+        margin: 0; /* Remove horizontal margins */
+    }
 
+    .filter-group label {
+        margin-bottom: 5px; /* Space between label and input */
+    }
 
+    .filter-group input[type="date"],
+    .filter-group select {
+        width: 100%; /* Make input/select take full width of its group */
+        max-width: 100%; /* Ensure it doesn't exceed 100% */
+        padding: 12px; /* Slightly more padding for touch targets */
+        font-size: 1.1em; /* Slightly larger font for readability */
+    }
 
-    .event-card {
+    /* Event Card Section - Mobile adjustments */
+    .event-card {
+        flex-direction: column; /* Stack date and details vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+        padding: 15px; /* Adjust card padding */
+        gap: 15px; /* Space between date box and event details */
+        text-align: center; /* Center text within the card */
+    }
 
-        flex-direction: column; /* Empile les éléments sur petits écrans */
+    .date-box {
+        width: 80px; /* Smaller width for date box on mobile */
+        height: 80px; /* Smaller height for date box on mobile */
+        min-width: 80px; /* Ensure it doesn't shrink too much */
+        min-height: 80px; /* Ensure it doesn't shrink too much */
+        margin-right: 0; /* Remove margin-right when stacked */
+        /* Re-center month and day if they don't fit perfectly in the smaller box */
+        line-height: 1.1; /* Adjust line height for better fit */
+        font-size: 0.9em; /* Adjust overall font size within the box */
+    }
 
-        align-items: flex-start;
+    .date-month {
+        font-size: 0.8em; /* Smaller month text */
+        margin-bottom: 2px; /* Reduce gap */
+    }
 
-        text-align: left;
+    .date-day {
+        font-size: 1.8em; /* Smaller day text, relative to box */
+    }
 
-    }
+    .event-details {
+        text-align: center; /* Center event text */
+        width: 100%; /* Take full width */
+        margin-right: 0; /* Remove margin-right */
+    }
 
+    .event-details h3 {
+        font-size: 1.4em; /* Adjust title font size */
+        margin-bottom: 8px;
+    }
 
+    .event-details p {
+        font-size: 1em; /* Adjust paragraph font size */
+        margin-bottom: 5px;
+    }
 
-    .event-date-box {
+    .event-actions {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        gap: 10px; /* Space between buttons */
+        width: 100%; /* Take full width */
+        margin-top: 10px; /* Add space above actions */
+    }
 
-        width: 100%; /* La boîte de date prend toute la largeur */
+    .reserve-button {
+        width: 90%; /* Make reserve button take more width on mobile, but not full */
+        max-width: 250px; /* Prevent it from being too wide on slightly larger mobiles */
+        padding: 12px 0; /* Adjust padding */
+        font-size: 1.1em; /* Adjust font size for better touch */
+    }
 
-        height: auto;
+    .more-info-button {
+        font-size: 1em; /* Adjust font size */
+        margin-top: 0; /* Remove extra margin if already in gap */
+    }
 
-        padding: 10px 0;
-
-        border-radius: 8px 8px 0 0; /* Coins arrondis seulement en haut */
-
-        font-size: 1.5em;
-
-    }
-
-
-
-    .event-main-info {
-
-        width: 100%;
-
-        text-align: left;
-
-    }
-
-
-
-    .event-actions {
-
-        width: 100%;
-
-        align-items: stretch; /* Le bouton prend toute la largeur */
-
-    }
-
-
-
-    .event-link {
-
-        width: 100%; /* Le bouton prend toute la largeur sur mobile */
-
-        margin-top: 10px;
-
-    }
-
-    .event-description {
-
-        width: calc(100% - 30px); /* Ajuste la largeur pour le padding sur mobile aussi */
-
-        margin-top: -5px;
-
-        margin-bottom: 10px;
-
-    }
-
+    .event-description {
+        margin-top: 10px; /* Reduce top margin for description */
+    }
 }
 
-
-
+/* For even smaller screens (e.g., iPhone 5/SE) if needed */
 @media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
 
-    body {
+    .filter-group input[type="date"],
+    .filter-group select {
+        padding: 10px;
+        font-size: 1em;
+    }
 
-        padding: 10px;
-
-    }
-
-    .container {
-
-        padding: 10px;
-
-    }
-
+    .event-details h3 {
+        font-size: 1.3em;
+    }
 }
